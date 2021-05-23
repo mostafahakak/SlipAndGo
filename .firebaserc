@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "slipandgo-9c66d",
+    "build/web": "slipandgo-9c66d"
+  }
+}
