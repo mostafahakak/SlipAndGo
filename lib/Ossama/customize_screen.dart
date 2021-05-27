@@ -245,16 +245,16 @@ class _EditControlsState extends State<EditControls> {
   }
 
   getStrapUpdate([Color color, int size, bool isMale,String acces]) {
-    if (_strapColor != color) widget.viewKey.currentState.updateView(_image, color,_accessories,_bColor);
     _accessories = acces;
     _strapColor = color;
     _size = size;
     _isMale = isMale;
+     widget.viewKey.currentState.updateView(_image, color,_accessories,_bColor);
   }
 
 
   getAccessUpdate([Color color, int size, bool isMale,String acces]) {
-    if (_accessories != acces) widget.viewKey.currentState.updateAcc(_accessories);
+    if (_accessories != acces) widget.viewKey.currentState.updateAcc(acces);
     _accessories = acces;
     _strapColor = color;
     _size = size;
@@ -265,7 +265,6 @@ class _EditControlsState extends State<EditControls> {
 
 
   getDesignUpdate([String image,String acces]) {
-
         _image = image;
         _accessories = acces;
         widget.viewKey.currentState.updateView(_image, Colors.transparent,_accessories,_bColor);
@@ -360,8 +359,7 @@ class ViewState extends State<View> {
   }
   @override
   Widget build(BuildContext context) {
-    print(widget.accessories);
-    print(_strapColor.toString()+"sosos");
+    //print('rebuild: $_accessories');
     return ConstrainedBox(
       constraints: BoxConstraints(
         maxHeight: MediaQuery.of(context).size.height * 0.7,
